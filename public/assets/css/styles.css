@@ -6,7 +6,7 @@ main{
     background-color: lightgrey!important;
 }
 header{
-border-bottom: solid 1px black;
+    border-bottom: solid 1px black;
 }
 .preHeader{
     width: 100%;
@@ -25,22 +25,17 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-.navlink{
-    text-decoration: none;
-    color: black;
+.footer-main{
+    background-color: azure!important;
 }
-
 #language{
     margin-left: 5px;
     border-radius: 10px;
 }
-.spanwidth{
-    min-width: 10px;
+.details-btn{
+    margin-left:40%;
+    margin-top: 10px;
 }
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: grey;
+.heading{
+    font-size: 3rem;
 }
