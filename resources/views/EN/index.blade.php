@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appen')
 
 @section('content')
     <!-- Start Slider -->
@@ -97,34 +97,27 @@
 
     <div class="box-add-products">
         <div class="container">
-            <h1 class="text-center m-2 heading"> <u>Most frequent questions:</u></h1>
-            <div class="questions">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="question">
-                            <h2><u>Question 1?</u></h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, quo eos. Quibusdam, reiciendis eligendi! Cupiditate incidunt soluta quibusdam est, id corporis, hic consequuntur perferendis tempora ratione molestiae eveniet unde nisi?</p>
-                        </div>
+            <h1 class="text-center m-2 heading"> <u>News:</u></h1>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="{{asset('assets/images/categories_img_01.jpg')}}" alt="" />
+                        <a class="btn hvr-hover" href="#">News 1</a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="question">
-                            <h2><u>Question 2?</u></h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, quo eos. Quibusdam, reiciendis eligendi! Cupiditate incidunt soluta quibusdam est, id corporis, hic consequuntur perferendis tempora ratione molestiae eveniet unde nisi?</p>
-                        </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="{{asset('assets/images/categories_img_02.jpg')}}" alt="" />
+                        <a class="btn hvr-hover" href="#">News 2</a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="question">
-                            <h2><u>Question 3?</u></h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, quo eos. Quibusdam, reiciendis eligendi! Cupiditate incidunt soluta quibusdam est, id corporis, hic consequuntur perferendis tempora ratione molestiae eveniet unde nisi?</p>
-                        </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="{{asset('assets/images/categories_img_03.jpg')}}" alt="" />
+                        <a class="btn hvr-hover" href="#">News 3</a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary more">More...</a>
         </div>
     </div>
 

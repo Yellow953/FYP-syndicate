@@ -37,8 +37,8 @@
     <div id="app">
         <div class="preHeader">
             <select name="language" id="language" class="m-2 btn btn-primary">
-                <option value="Ar" selected><a href="home">AR</a></option>
-                <option value="En"><a href="/en/home">EN</a></option>
+                <option value="Ar"><a href="/home">Ar</a></option>
+                <option value="En" selected><a href="/en/home">EN</a></option>
             </select>
             <div class="m-1">
                 @if (Auth()->user())
@@ -52,10 +52,10 @@
                             <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
                             <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
                         </svg>
-                        تسجيل خروج</a>
+                        Logout</a>
                 @else
-                    <a href="/register" class="btn btn-primary">اشتراك</a>
-                    <a href="/login" class="btn btn-primary">تسجيل الدخول</a>
+                    <a href="/register" class="btn btn-primary">Register</a>
+                    <a href="/login" class="btn btn-primary">Login</a>
                 @endif
             </div>
         </div>
@@ -76,11 +76,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item {{$route == '/home' ? 'active' : ''}}"><a class="nav-link" href="/home">الصفحة الرئيسية</a></li>
-                            <li class="nav-item {{$route == '/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/aboutus">معلومات عنا</a></li>
-                            <li class="nav-item {{$route == '/contactus' ? 'active' : ''}}"><a class="nav-link" href="/contactus">اتصل بنا</a></li>
-                            <li class="nav-item {{$route == '/members' ? 'active' : ''}}"><a class="nav-link" href="/members">أفراد</a></li>
-                            <li class="nav-item {{$route == '/appliances' ? 'active' : ''}}"><a class="nav-link" href="/appliances">التقديمات</a></li>
+                            <li class="nav-item {{$route == '/home' ? 'active' : ''}}"><a class="nav-link" href="/home">Home</a></li>
+                            <li class="nav-item {{$route == '/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/aboutus">About Us</a></li>
+                            <li class="nav-item {{$route == '/contactus' ? 'active' : ''}}"><a class="nav-link" href="/contactus">Contact Us</a></li>
+                            <li class="nav-item {{$route == '/members' ? 'active' : ''}}"><a class="nav-link" href="/members">Members</a></li>
+                            <li class="nav-item {{$route == '/appliances' ? 'active' : ''}}"><a class="nav-link" href="/appliances">Appliances</a></li>
                         </ul>
                     </div>
                 </div>
