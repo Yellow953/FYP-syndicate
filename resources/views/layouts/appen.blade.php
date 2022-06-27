@@ -76,11 +76,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item {{$route == '/home' ? 'active' : ''}}"><a class="nav-link" href="/home">Home</a></li>
-                            <li class="nav-item {{$route == '/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/aboutus">About Us</a></li>
-                            <li class="nav-item {{$route == '/contactus' ? 'active' : ''}}"><a class="nav-link" href="/contactus">Contact Us</a></li>
-                            <li class="nav-item {{$route == '/members' ? 'active' : ''}}"><a class="nav-link" href="/members">Members</a></li>
-                            <li class="nav-item {{$route == '/appliances' ? 'active' : ''}}"><a class="nav-link" href="/appliances">Appliances</a></li>
+                            <li class="nav-item {{$route == '/en/home' ? 'active' : ''}}"><a class="nav-link" href="/en/home">Home</a></li>
+                            <li class="nav-item {{$route == '/en/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/en/aboutus">About Us</a></li>
+                            <li class="nav-item {{$route == '/en/contactus' ? 'active' : ''}}"><a class="nav-link" href="/en/contactus">Contact Us</a></li>
+                            <li class="nav-item {{$route == '/en/members' ? 'active' : ''}}"><a class="nav-link" href="/en/members">Members</a></li>
+                            <li class="nav-item {{$route == '/en/appliances' ? 'active' : ''}}"><a class="nav-link" href="/en/appliances">Appliances</a></li>
                         </ul>
                     </div>
                 </div>

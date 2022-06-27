@@ -16,21 +16,21 @@ class ENController extends Controller{
 
     public function aboutus(){
         $route='/en/aboutus';
-        return view('EN/AboutUs', compact('route'));
+        return view('EN.AboutUs', compact('route'));
     }
 
     public function contactus(){
         $route='/en/contactus';
-        return view('EN/ContactUs', compact('route'));
+        return view('EN.ContactUs', compact('route'));
     }
 
     public function members(){
         $route='/en/members';
-        return view('EN/Members', compact('route'));
+        return view('EN.Members', compact('route'));
     }
 
     public function appliances(){
         $route='/en/appliances';
-        return view('EN/Appliances', compact('route'));
+        return view('EN.Appliances', compact('route'));
     }
 }

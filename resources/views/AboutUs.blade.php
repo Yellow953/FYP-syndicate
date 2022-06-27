@@ -53,7 +53,7 @@
         </div>
     </div><hr><hr>
 
-    <div class="our-mission">
+    <div class="rules-and-laws">
         <div class="container">
             <h1 class="text-center"><u>Rules And Laws:</u></h1>
             <div class="row my-4">

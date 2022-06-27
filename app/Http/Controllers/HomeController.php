@@ -33,4 +33,9 @@ class HomeController extends Controller{
         $route='/appliances';
         return view('Appliances', compact('route'));
     }
+
+    public function contactussubmit(Request $request){
+
+        return redirect()->back();
+    }
 }

@@ -12,6 +12,8 @@ Route::get('/contactus', [App\Http\Controllers\HomeController::class, 'contactus
 Route::get('/members', [App\Http\Controllers\HomeController::class, 'members']);
 Route::get('/appliances', [App\Http\Controllers\HomeController::class, 'appliances']);
 
+Route::post('/contactussubmit', [App\Http\Controllers\HomeController::class, 'contactussubmit']);
+
 //Client Side EN
 Route::get('/en/home', [App\Http\Controllers\ENController::class, 'index']);
 Route::get('/en/aboutus', [App\Http\Controllers\ENController::class, 'aboutus']);
