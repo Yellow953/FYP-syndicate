@@ -1,11 +1,50 @@
-{{-- @extends('layouts.app') --}}
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{{-- @section('content') --}}
-<div class="container">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'FYP') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+
+    {{-- Bootstrap --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+</head>
+<body>
+  <div class="container-fluid p-0 m-0">
+    <div>
+        <a href="/home"><img src="https://scsl.org.lb/wp-content/uploads/2018/07/Asset-12.png" alt="" class="loginimg"></a>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header head">
+                    <div><a href="/login" class="nav-link">Login</a></div>
+                    <div><a href="/register" class="nav-link text-primary">Register</a></div>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

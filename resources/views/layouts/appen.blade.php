@@ -36,10 +36,18 @@
 <body>
     <div id="app">
         <div class="preHeader">
-            <select name="language" id="language" class="m-2 btn btn-primary">
-                <option value="Ar"><a href="/home">Ar</a></option>
-                <option value="En" selected><a href="/en/home">EN</a></option>
-            </select>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle pl-3 m-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  EN 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down mx-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/home">AR</a>
+                  <a class="dropdown-item" href="/en/home">EN</a>
+                </div>
+            </div>
             <div class="m-1">
                 @if (Auth()->user())
                     <a href="/profile/{{Auth()->user()->id}}" class="btn btn-primary">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
+Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
 
 //Client Side AR
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
@@ -22,4 +23,10 @@ Route::get('/en/members', [App\Http\Controllers\ENController::class, 'members'])
 Route::get('/en/appliances', [App\Http\Controllers\ENController::class, 'appliances']);
 
 //Admin Side
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'admin']);
+Route::get('/en/admin', [App\Http\Controllers\AdminController::class, 'admin']);
+Route::get('/en/admin/users', [App\Http\Controllers\AdminController::class, 'users']);
+Route::get('/en/admin/news', [App\Http\Controllers\AdminController::class, 'news']);
+Route::get('/en/admin/memberAppliances', [App\Http\Controllers\AdminController::class, 'memberAppliances']);
+Route::get('/en/admin/insuranceAppliances', [App\Http\Controllers\AdminController::class, 'insuranceAppliances']);
+Route::get('/en/admin/insuranceAppliances', [App\Http\Controllers\AdminController::class, 'insurances']);
+Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions']);
