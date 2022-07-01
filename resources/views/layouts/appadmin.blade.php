@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
 
     <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
@@ -61,14 +62,14 @@
                 </li>
     
                 <li class="nav-item">
-                    <a class="nav-link" href="/en/admin/memberAppliances">
-                        <span>Member Appliances</span>
+                    <a class="nav-link" href="/en/admin/memberApplications">
+                        <span>Member Applications</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/en/admin/insuranceAppliances">
-                        <span>Insurance Appliances</span>
+                    <a class="nav-link" href="/en/admin/insuranceApplications">
+                        <span>Insurance Applications</span>
                     </a>
                 </li>
 

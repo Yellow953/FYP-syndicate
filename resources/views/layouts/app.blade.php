@@ -85,11 +85,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item {{$route == '/home' ? 'active' : ''}}"><a class="nav-link" href="/home">الصفحة الرئيسية</a></li>
-                            <li class="nav-item {{$route == '/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/aboutus">معلومات عنا</a></li>
-                            <li class="nav-item {{$route == '/contactus' ? 'active' : ''}}"><a class="nav-link" href="/contactus">اتصل بنا</a></li>
+                            <li class="nav-item {{$route == '/applications' ? 'active' : ''}}"><a class="nav-link" href="/applications">التقديمات</a></li>
                             <li class="nav-item {{$route == '/members' ? 'active' : ''}}"><a class="nav-link" href="/members">أفراد</a></li>
-                            <li class="nav-item {{$route == '/appliances' ? 'active' : ''}}"><a class="nav-link" href="/appliances">التقديمات</a></li>
+                            <li class="nav-item {{$route == '/contactus' ? 'active' : ''}}"><a class="nav-link" href="/contactus">اتصل بنا</a></li>
+                            <li class="nav-item {{$route == '/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/aboutus">معلومات عنا</a></li>
+                            <li class="nav-item {{$route == '/home' ? 'active' : ''}}"><a class="nav-link" href="/home">الصفحة الرئيسية</a></li>
                         </ul>
                     </div>
                 </div>

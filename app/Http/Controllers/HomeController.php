@@ -37,9 +37,9 @@ class HomeController extends Controller{
         return view('Members', compact('route'));
     }
 
-    public function appliances(){
-        $route='/appliances';
-        return view('Appliances', compact('route'));
+    public function applications(){
+        $route='/applications';
+        return view('Applications', compact('route'));
     }
 
     public function contactussubmit(Request $request){

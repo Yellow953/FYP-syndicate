@@ -83,3 +83,11 @@ nav{
     flex-direction: row;
     justify-content: space-between;
 }
+.center{
+    margin-left: 48.5%;
+}
+.align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

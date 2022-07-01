@@ -4,7 +4,7 @@
 <div class="container-fluid">
     
     <div class="align">
-        <h1 class="h3 mb-2 text-gray-800">Insurance</h1>
+        <h1 class="h3 mb-2 text-gray-800">Member Applications</h1>
         
         <div>
             <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -27,27 +27,26 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Insurance Id</th>
-                            <th>Client Name</th>
-                            <th>Client Email</th>
-                            <th>Client Phone</th>
-                            <th>Start date</th>
-                            <th>End date</th>
+                            <th>Application Id</th>
+                            <th>User Name</th>
+                            <th>User Email</th>
+                            <th>User Phone</th>
+                            <th>Submit date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr>
-                            <td>2342343</td>
+                            <td>56283</td>
                             <td>joe mazloum</td>
                             <td>joemazloum953@gmail.com</td>
                             <td>70285659</td>
                             <td>09/34/4129</td>
-                            <td>09/34/4129</td>
                             <td>
-                                <a href="#" class="btn btn-warning m-1">Extend</a>
-                                <a href="#" class="btn btn-danger m-1">Delete</a>
+                                <a href="#" class="btn btn-warning m-1">View Application</a>
+                                <a href="#" class="btn btn-success m-1">Approve</a>
+                                <a href="#" class="btn btn-danger m-1">Reject</a>
                             </td>
                         </tr>
                     </tbody>

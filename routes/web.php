@@ -11,7 +11,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'aboutus']);
 Route::get('/contactus', [App\Http\Controllers\HomeController::class, 'contactus']);
 Route::get('/members', [App\Http\Controllers\HomeController::class, 'members']);
-Route::get('/appliances', [App\Http\Controllers\HomeController::class, 'appliances']);
+Route::get('/applications', [App\Http\Controllers\HomeController::class, 'applications']);
 
 Route::post('/contactussubmit', [App\Http\Controllers\HomeController::class, 'contactussubmit']);
 
@@ -20,13 +20,13 @@ Route::get('/en/home', [App\Http\Controllers\ENController::class, 'index']);
 Route::get('/en/aboutus', [App\Http\Controllers\ENController::class, 'aboutus']);
 Route::get('/en/contactus', [App\Http\Controllers\ENController::class, 'contactus']);
 Route::get('/en/members', [App\Http\Controllers\ENController::class, 'members']);
-Route::get('/en/appliances', [App\Http\Controllers\ENController::class, 'appliances']);
+Route::get('/en/applications', [App\Http\Controllers\ENController::class, 'applications']);
 
 //Admin Side
 Route::get('/en/admin', [App\Http\Controllers\AdminController::class, 'admin']);
 Route::get('/en/admin/users', [App\Http\Controllers\AdminController::class, 'users']);
 Route::get('/en/admin/news', [App\Http\Controllers\AdminController::class, 'news']);
-Route::get('/en/admin/memberAppliances', [App\Http\Controllers\AdminController::class, 'memberAppliances']);
-Route::get('/en/admin/insuranceAppliances', [App\Http\Controllers\AdminController::class, 'insuranceAppliances']);
-Route::get('/en/admin/insuranceAppliances', [App\Http\Controllers\AdminController::class, 'insurances']);
+Route::get('/en/admin/memberApplications', [App\Http\Controllers\AdminController::class, 'memberApplications']);
+Route::get('/en/admin/insuranceApplications', [App\Http\Controllers\AdminController::class, 'insuranceApplications']);
+Route::get('/en/admin/insurances', [App\Http\Controllers\AdminController::class, 'insurances']);
 Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions']);

@@ -88,7 +88,7 @@
                             <li class="nav-item {{$route == '/en/aboutus' ? 'active' : ''}}"><a class="nav-link" href="/en/aboutus">About Us</a></li>
                             <li class="nav-item {{$route == '/en/contactus' ? 'active' : ''}}"><a class="nav-link" href="/en/contactus">Contact Us</a></li>
                             <li class="nav-item {{$route == '/en/members' ? 'active' : ''}}"><a class="nav-link" href="/en/members">Members</a></li>
-                            <li class="nav-item {{$route == '/en/appliances' ? 'active' : ''}}"><a class="nav-link" href="/en/appliances">Appliances</a></li>
+                            <li class="nav-item {{$route == '/en/applications' ? 'active' : ''}}"><a class="nav-link" href="/en/applications">Applications</a></li>
                         </ul>
                     </div>
                 </div>

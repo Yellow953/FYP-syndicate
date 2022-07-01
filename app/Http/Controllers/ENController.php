@@ -29,8 +29,8 @@ class ENController extends Controller{
         return view('EN.Members', compact('route'));
     }
 
-    public function appliances(){
-        $route='/en/appliances';
-        return view('EN.Appliances', compact('route'));
+    public function applications(){
+        $route='/en/applications';
+        return view('EN.Applications', compact('route'));
     }
 }

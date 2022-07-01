@@ -17,12 +17,12 @@ class AdminController extends Controller{
         return view('admin/News');
     }
 
-    public function memberAppliances(){
-        return view('admin/MemberAppliances');
+    public function memberApplications(){
+        return view('admin/MemberApplications');
     }
 
-    public function insuranceAppliances(){
-        return view('admin/InsuranceAppliances');
+    public function insuranceApplications(){
+        return view('admin/InsuranceApplications');
     }
 
     public function insurances(){
