@@ -23,7 +23,7 @@
 
     <div class="card shadow my-4">
         <div class="card-body">
-            <a href="#" class="btn btn-primary">New</a>
+            <a href="/admin/user/new" class="btn btn-primary">New</a>
 
             <div class="table-responsive my-2">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -32,7 +32,8 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>password</th>
+                            <th>Role</th>
+                            <th>Active</th>
                             <th>Start date</th>
                             <th>End date</th>
                             <th>Action</th>
@@ -40,17 +41,47 @@
                     </thead>
 
                     <tbody>
+                        @forelse ($users as $user)
                         <tr>
-                            <td>joe mazloum</td>
-                            <td>joemazloum953@gmail.com</td>
-                            <td>70285659</td>
-                            <td>password123</td>
-                            <td>09/34/4129</td>
-                            <td>09/34/4129</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->phone}}</td>
                             <td>
-                                <a href="#" class="btn btn-warning m-1">Edit</a>
-                                <a href="#" class="btn btn-danger m-1">Delete</a>
+                                @if ($user->role == 1)
+                                    admin
+                                @elseif ($user->role == 2)
+                                    Member
+                                @else
+                                    User
+                                @endif
                             </td>
+                            <td>{{($user->active == 1 ? 'Active' : 'Not Active')}}</td>
+                            <td>
+                                @if ($user->start_date != '')
+                                    {{$user->start_date}};
+                                @else
+                                    -
+                                @endif
+                            </td>
+                            <td>
+                                @if ($user->start_date != '')
+                                    {{$user->start_date}};
+                                @else
+                                    -
+                                @endif
+                            </td>
+                            <td>
+                                <a href="/admin/user/{{$user->id}}/edit" class="btn btn-warning m-1">Edit</a>
+                                <a href="/admin/user/{{$user->id}}/delete" class="btn btn-danger m-1">Delete</a>
+                            </td>
+                        </tr>
+                        @empty
+                            <tr>
+                                <td colspan="8">No Users Yet</td>
+                            </tr>
+                        @endforelse
+                        <tr>
+                           <td colspan="8">{{$users->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

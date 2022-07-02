@@ -30,3 +30,22 @@ Route::get('/en/admin/memberApplications', [App\Http\Controllers\AdminController
 Route::get('/en/admin/insuranceApplications', [App\Http\Controllers\AdminController::class, 'insuranceApplications']);
 Route::get('/en/admin/insurances', [App\Http\Controllers\AdminController::class, 'insurances']);
 Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions']);
+
+//user
+Route::get('/admin/user/{id}/delete', [App\Http\Controllers\UserController::class, 'DeleteUser']);
+Route::get('/admin/user/{id}/edit', [App\Http\Controllers\UserController::class, 'EditUser']);
+Route::post('/admin/user/{id}/save', [App\Http\Controllers\UserController::class, 'SaveUser']);
+Route::get('/admin/user/new', [App\Http\Controllers\UserController::class, 'NewUser']);
+Route::post('/admin/user/save', [App\Http\Controllers\UserController::class, 'SaveNewUser']);
+
+//news
+Route::get('/admin/news/{id}/delete', [App\Http\Controllers\NewsController::class, 'DeleteNews']);
+Route::get('/admin/news/{id}/edit', [App\Http\Controllers\NewsController::class, 'EditNews']);
+Route::post('/admin/news/{id}/save', [App\Http\Controllers\NewsController::class, 'SaveNews']);
+Route::get('/admin/news/new', [App\Http\Controllers\NewsController::class, 'NewNews']);
+Route::post('/admin/news/save', [App\Http\Controllers\NewsController::class, 'SaveNewNews']);
+
+//questions
+Route::get('/admin/questions/{id}/delete', [App\Http\Controllers\QuestionsController::class, 'DeleteQuestion']);
+Route::post('/admin/questions/new', [App\Http\Controllers\QuestionsController::class, 'NewQuestion']);
+Route::get('/admin/questions/{id}/addtofavorite', [App\Http\Controllers\QuestionsController::class, 'AddToFavorite']);

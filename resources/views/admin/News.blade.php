@@ -23,7 +23,7 @@
 
     <div class="card shadow my-4">
         <div class="card-body">
-            <a href="#" class="btn btn-primary">New</a>
+            <a href="/admin/news/new" class="btn btn-primary">New</a>
 
             <div class="table-responsive my-2">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -37,14 +37,23 @@
                     </thead>
 
                     <tbody>
+                        @forelse($news as $n)
+                            <tr>
+                                <td>{{$n->name}}</td>
+                                <td>{{$n->text}}</td>
+                                <td>{{$n->created_at}}</td>
+                                <td>
+                                    <a href="/admin/news/{{$n->id}}/edit" class="btn btn-warning m-1">Edit</a>
+                                    <a href="/admin/news/{{$n->id}}/delete" class="btn btn-danger m-1">Delete</a>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4"> No News Yet</td>
+                            </tr>
+                        @endforelse
                         <tr>
-                            <td>News1</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil fuga temporibus explicabo quasi iusto, eius officiis, consectetur voluptates, odio laborum tenetur voluptas dolore. Praesentium delectus voluptatum impedit odit architecto qui.</td>
-                            <td>09/34/4129</td>
-                            <td>
-                                <a href="#" class="btn btn-warning m-1">Edit</a>
-                                <a href="#" class="btn btn-danger m-1">Delete</a>
-                            </td>
+                            <td colspan="4">{{$news->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

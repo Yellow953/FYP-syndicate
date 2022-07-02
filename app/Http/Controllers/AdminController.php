@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Insurance;
+use App\Models\MemberApplication;
+use App\Models\InsuranceApplication;
+use App\Models\News;
+use App\Models\Question;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller{
@@ -10,27 +16,33 @@ class AdminController extends Controller{
     }
 
     public function users(){
-        return view('admin/Users');
+        $users = User::paginate(5);
+        return view('admin/Users', compact('users'));
     }
 
     public function news(){
-        return view('admin/News');
+        $news = News::paginate(5);
+        return view('admin/News', compact('news'));
     }
 
     public function memberApplications(){
-        return view('admin/MemberApplications');
+        $memberApplications = MemberApplication::paginate(5);
+        return view('admin/MemberApplications', compact('memberApplications'));
     }
 
     public function insuranceApplications(){
-        return view('admin/InsuranceApplications');
+        $insuranceApplications = InsuranceApplication::paginate(5);
+        return view('admin/InsuranceApplications', compact('insuranceApplications'));
     }
 
     public function insurances(){
-        return view('admin/Insurances');
+        $insurances = Insurance::paginate(5);
+        return view('admin/Insurances', compact('insurances'));
     }
 
     public function userQuestions(){
-        return view('admin/UserQuestions');
+        $questions = Question::paginate(5);
+        return view('admin/UserQuestions', compact('questions'));
     }
 
 }

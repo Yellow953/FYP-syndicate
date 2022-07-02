@@ -35,15 +35,24 @@
                     </thead>
 
                     <tbody>
+                        @forelse ($questions as $q)
+                            <tr>
+                                <td>{{$q->email}}</td>
+                                <td>{{$q->question}}</td>
+                                <td>{{$q->created_at}}</td>
+                                <td>
+                                    <a href="mailto:{{$q->email}}" class="btn btn-warning m-1">Reply</a>
+                                    <a href="/admin/questions/{{$q->id}}/delete" class="btn btn-danger m-1">Delete</a>
+                                    <a href="/admin/questions/{{$q->id}}/addtofavorite" class="btn btn-success m-1">Add to Favorites</a>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4">No Questions Yet</td>
+                            </tr>
+                        @endforelse
                         <tr>
-                            <td>joemazloum953@gmail.com</td>
-                            <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sed, minus praesentium provident eligendi neque placeat beatae expedita exercitationem amet quis unde minima, esse quae dolor explicabo. Repellendus, cum distinctio.</td>
-                            <td>09/34/4129</td>
-                            <td>
-                                <a href="#" class="btn btn-warning m-1">Reply</a>
-                                <a href="#" class="btn btn-danger m-1">Delete</a>
-                                <a href="#" class="btn btn-success m-1">Add to Favorites</a>
-                            </td>
+                            <td colspan="4">{{$questions->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

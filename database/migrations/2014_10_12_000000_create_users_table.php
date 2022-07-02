@@ -20,6 +20,14 @@ return new class extends Migration
             $table->integer('phone')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->integer('role')->nullable();  // 0 user // 1 admin // 2 member
+            $table->integer('active')->nullable();  // 0 inactive // 1 active
+
+            //membership
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
