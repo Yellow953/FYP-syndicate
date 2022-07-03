@@ -38,17 +38,30 @@
                     </thead>
 
                     <tbody>
+                       @forelse ($insurances as $i)
+                            @foreach ($users as $user)
+                                @if ($user->id == $i->user_id)
+                                    <tr>
+                                        <td>{{$i->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->phone}}</td>
+                                        <td>{{$i->start_date}}</td>
+                                        <td>{{$i->end_date}}</td>
+                                        <td>
+                                            <a href="/admin/insurances/{{$i->id}}/extend" class="btn btn-warning m-1">Extend</a>
+                                            <a href="/admin/insurances/{{$i->id}}/delete" class="btn btn-danger m-1">Delete</a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                       @empty
+                           <tr>
+                            <td colspan="7">No Insurances Yet</td>
+                           </tr>
+                       @endforelse
                         <tr>
-                            <td>2342343</td>
-                            <td>joe mazloum</td>
-                            <td>joemazloum953@gmail.com</td>
-                            <td>70285659</td>
-                            <td>09/34/4129</td>
-                            <td>09/34/4129</td>
-                            <td>
-                                <a href="#" class="btn btn-warning m-1">Extend</a>
-                                <a href="#" class="btn btn-danger m-1">Delete</a>
-                            </td>
+                            <td colspan="7">{{$insurances->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

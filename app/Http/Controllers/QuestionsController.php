@@ -14,6 +14,7 @@ class QuestionsController extends Controller{
     public function AddToFavorite($id){
         $question = Question::find($id);
         $question->favorite = 1;
+        $question->save();
         return redirect()->back();
     }
 

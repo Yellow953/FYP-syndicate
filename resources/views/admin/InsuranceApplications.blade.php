@@ -37,17 +37,30 @@
                     </thead>
 
                     <tbody>
+                        @forelse ($insuranceApplications as $ia)
+                            @foreach ($users as $user)
+                                @if ($user->id == $ia->user_id)
+                                    <tr>
+                                        <td>{{$ia->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->phone}}</td>
+                                        <td>{{$ia->created_at}}</td>
+                                        <td>
+                                            <a href="" class="btn btn-warning m-1">View Application</a>
+                                            <a href="/admin/insuranceApplication/{{$ia->id}}/accept" class="btn btn-success m-1">Approve</a>
+                                            <a href="/admin/insuranceApplication/{{$ia->id}}/reject" class="btn btn-danger m-1">Reject</a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                       @empty
+                           <tr>
+                            <td colspan="6">No Insurance Applications For Now</td>
+                           </tr>
+                       @endforelse
                         <tr>
-                            <td>32764</td>
-                            <td>joe mazloum</td>
-                            <td>joemazloum953@gmail.com</td>
-                            <td>70285659</td>
-                            <td>09/34/4129</td>
-                            <td>
-                                <a href="#" class="btn btn-warning m-1">View Application</a>
-                                <a href="#" class="btn btn-success m-1">Approve</a>
-                                <a href="#" class="btn btn-danger m-1">Reject</a>
-                            </td>
+                            <td colspan="6">{{$insuranceApplications->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

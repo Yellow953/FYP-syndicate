@@ -58,14 +58,14 @@
                             <td>{{($user->active == 1 ? 'Active' : 'Not Active')}}</td>
                             <td>
                                 @if ($user->start_date != '')
-                                    {{$user->start_date}};
+                                    {{$user->start_date}}
                                 @else
                                     -
                                 @endif
                             </td>
                             <td>
                                 @if ($user->start_date != '')
-                                    {{$user->start_date}};
+                                    {{$user->start_date}}
                                 @else
                                     -
                                 @endif

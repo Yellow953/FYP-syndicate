@@ -27,17 +27,20 @@ class AdminController extends Controller{
 
     public function memberApplications(){
         $memberApplications = MemberApplication::paginate(5);
-        return view('admin/MemberApplications', compact('memberApplications'));
+        $users = User::all();
+        return view('admin/MemberApplications', compact('memberApplications', 'users'));
     }
 
     public function insuranceApplications(){
         $insuranceApplications = InsuranceApplication::paginate(5);
-        return view('admin/InsuranceApplications', compact('insuranceApplications'));
+        $users = User::all();
+        return view('admin/InsuranceApplications', compact('insuranceApplications', 'users'));
     }
 
     public function insurances(){
         $insurances = Insurance::paginate(5);
-        return view('admin/Insurances', compact('insurances'));
+        $users = User::all();
+        return view('admin/Insurances', compact('insurances', 'users'));
     }
 
     public function userQuestions(){

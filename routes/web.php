@@ -47,5 +47,14 @@ Route::post('/admin/news/save', [App\Http\Controllers\NewsController::class, 'Sa
 
 //questions
 Route::get('/admin/questions/{id}/delete', [App\Http\Controllers\QuestionsController::class, 'DeleteQuestion']);
-Route::post('/admin/questions/new', [App\Http\Controllers\QuestionsController::class, 'NewQuestion']);
 Route::get('/admin/questions/{id}/addtofavorite', [App\Http\Controllers\QuestionsController::class, 'AddToFavorite']);
+
+//insurances
+Route::get('/admin/insurances/{id}/delete', [App\Http\Controllers\InsurancesController::class, 'DeleteInsurance']);
+Route::get('/admin/insurances/{id}/extend', [App\Http\Controllers\InsurancesController::class, 'ExtendInsurance']);
+
+//applications
+Route::get('/admin/insuranceApplication/{id}/accept', [App\Http\Controllers\ApplicationsController::class, 'AcceptInsurance']);
+Route::get('/admin/insuranceApplication/{id}/reject', [App\Http\Controllers\ApplicationsController::class, 'RejectInsurance']);
+Route::get('/admin/memberApplication/{id}/accept', [App\Http\Controllers\ApplicationsController::class, 'AcceptMember']);
+Route::get('/admin/memberApplication/{id}/reject', [App\Http\Controllers\ApplicationsController::class, 'RejectMember']);

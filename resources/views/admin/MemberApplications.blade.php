@@ -37,17 +37,30 @@
                     </thead>
 
                     <tbody>
+                        @forelse ($memberApplications as $ma)
+                            @foreach ($users as $user)
+                                @if ($user->id == $ma->user_id)
+                                    <tr>
+                                        <td>{{$ma->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->phone}}</td>
+                                        <td>{{$ma->created_at}}</td>
+                                        <td>
+                                            <a href="" class="btn btn-warning m-1">View Application</a>
+                                            <a href="/admin/memberApplication/{{$ma->id}}/accept" class="btn btn-success m-1">Approve</a>
+                                            <a href="/admin/memberApplication/{{$ma->id}}/reject" class="btn btn-danger m-1">Reject</a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                       @empty
+                           <tr>
+                            <td colspan="6">No Member Applications For Now</td>
+                           </tr>
+                       @endforelse
                         <tr>
-                            <td>56283</td>
-                            <td>joe mazloum</td>
-                            <td>joemazloum953@gmail.com</td>
-                            <td>70285659</td>
-                            <td>09/34/4129</td>
-                            <td>
-                                <a href="#" class="btn btn-warning m-1">View Application</a>
-                                <a href="#" class="btn btn-success m-1">Approve</a>
-                                <a href="#" class="btn btn-danger m-1">Reject</a>
-                            </td>
+                            <td colspan="6">{{$memberApplications->links()}}</td>
                         </tr>
                     </tbody>
                 </table>
