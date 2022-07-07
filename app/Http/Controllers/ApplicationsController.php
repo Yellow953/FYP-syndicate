@@ -10,6 +10,10 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ApplicationsController extends Controller{
+    public function __construct(){
+        $this->middleware('admin');
+    }
+    
     public function AcceptInsurance($id){
         $insuranceApplication = InsuranceApplication::find($id);
 

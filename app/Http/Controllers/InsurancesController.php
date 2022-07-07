@@ -7,6 +7,10 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class InsurancesController extends Controller{
+    public function __construct(){
+        $this->middleware('admin');
+    }
+    
     public function DeleteInsurance($id){
         Insurance::find($id)->delete();
         return redirect()->back();

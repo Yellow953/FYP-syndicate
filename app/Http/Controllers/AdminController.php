@@ -11,6 +11,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller{
+    public function __construct(){
+        $this->middleware('admin');
+    }
+    
     public function admin(){
         return view('admin/index');
     }
@@ -48,4 +52,10 @@ class AdminController extends Controller{
         return view('admin/UserQuestions', compact('questions'));
     }
 
+    public function slideshow(){
+        return view('Admin.slideshow');
+    }
+    public function board(){
+        return view('Admin.board');
+    }
 }

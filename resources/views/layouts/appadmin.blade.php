@@ -86,15 +86,24 @@
                 </li>
 
                 <hr class="sidebar-divider my-0 bg-dark">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/en/admin/board">
+                        <span>Board</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/en/admin/slideshow">
+                        <span>SlideShow</span>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">
                         <span>Logout</span>
                     </a>
                 </li>
-
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
             </ul>
             <!-- End of Sidebar -->
       

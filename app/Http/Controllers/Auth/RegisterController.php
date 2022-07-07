@@ -53,6 +53,7 @@ class RegisterController extends Controller
         $user->password = Hash::make($data['password']);
         $user->role = 0;
         $user->active = 1;
+        $user->profile_image = 'default.png';
         $user->save();
         return $user; 
     }

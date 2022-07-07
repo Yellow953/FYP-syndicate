@@ -30,6 +30,8 @@ Route::get('/en/admin/memberApplications', [App\Http\Controllers\AdminController
 Route::get('/en/admin/insuranceApplications', [App\Http\Controllers\AdminController::class, 'insuranceApplications']);
 Route::get('/en/admin/insurances', [App\Http\Controllers\AdminController::class, 'insurances']);
 Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions']);
+Route::get('/en/admin/slideshow', [App\Http\Controllers\AdminController::class, 'slideshow']);
+Route::get('/en/admin/board', [App\Http\Controllers\AdminController::class, 'board']);
 
 //user
 Route::get('/admin/user/{id}/delete', [App\Http\Controllers\UserController::class, 'DeleteUser']);

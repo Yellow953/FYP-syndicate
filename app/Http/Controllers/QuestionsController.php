@@ -6,6 +6,10 @@ use App\Models\Question;
 use Illuminate\Http\Request;
 
 class QuestionsController extends Controller{
+    public function __construct(){
+        $this->middleware('admin');
+    }
+    
     public function DeleteQuestion($id){
         $question = Question::find($id)->delete();
         return redirect()->back(); 

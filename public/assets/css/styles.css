@@ -91,3 +91,7 @@ nav{
     flex-direction: row;
     justify-content: space-between;
 }
+.admin-img{
+    width: 100px; 
+    height: 100px;
+}

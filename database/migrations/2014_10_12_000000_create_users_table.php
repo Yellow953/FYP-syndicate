@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('role')->nullable();  // 0 user // 1 admin // 2 member
             $table->integer('active')->nullable();  // 0 inactive // 1 active
 
+            $table->string('profile_image')->nullable();
+
             //membership
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
