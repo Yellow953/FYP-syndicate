@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendMailable;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class QuestionsController extends Controller{
     public function __construct(){
@@ -22,9 +24,17 @@ class QuestionsController extends Controller{
         return redirect()->back();
     }
 
-    public function NewQuestion(Request $request){
-        $question = new Question();
-
-        return redirect()->back();
+    public function ReplyQuestion($id){
+        $question  = Question::find($id);
+        return view('admin.replyQuestion', compact('question'));
     }
+
+    public function SendQuestion(Request $request, $id){
+        $question = Question::find($id);
+        
+        $question->answer = $request->answer;
+        $question->save();
+
+        return redirect('en/admin/userQuestions');
+    }  
 }

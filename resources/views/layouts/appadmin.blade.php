@@ -94,6 +94,12 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="/en/admin/projects">
+                        <span>projects</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="/en/admin/slideshow">
                         <span>SlideShow</span>
                     </a>

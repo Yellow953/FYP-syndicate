@@ -30,7 +30,9 @@
                     <thead>
                         <tr>
                             <th>Email</th>
+                            <th>Topic</th>
                             <th>Question</th>
+                            <th>Answer</th>
                             <th>Submit date</th>
                             <th>Action</th>
                         </tr>
@@ -39,11 +41,25 @@
                     <tbody>
                         @forelse ($questions as $q)
                             <tr>
-                                <td>{{$q->email}}</td>
+                                <td>
+                                    {{$q->name}} <br>
+                                    {{$q->email}}
+                                </td>
+                                <td>
+                                    {{$q->topic}} <br>
+                                    {{$q->subject}}
+                                </td>
                                 <td>{{$q->question}}</td>
+                                <td>
+                                    @if ($q->answer == '')
+                                        -
+                                    @else
+                                        {{$q->answer}}    
+                                    @endif
+                                </td>
                                 <td>{{$q->created_at}}</td>
                                 <td>
-                                    <a href="mailto:{{$q->email}}" class="btn btn-warning m-1">Reply</a>
+                                    <a href="/admin/questions/{{$q->id}}/reply" class="btn btn-warning m-1">Reply</a>
                                     <a href="/admin/questions/{{$q->id}}/delete" class="btn btn-danger m-1">Delete</a>
                                     <a href="/admin/questions/{{$q->id}}/addtofavorite" class="btn btn-success m-1">Add to Favorites</a>
                                 </td>

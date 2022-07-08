@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -18,8 +20,10 @@ class HomeController extends Controller{
     }
 
     public function index(){
-        $route='/home';
-        return view('index', compact('route'));
+        $route = '/home';
+        $news = News::latest()->take(3)->get();
+        $questions = Question::where('favorite', 1)->paginate(3);
+        return view('index', compact('route', 'news', 'questions'));
     }
 
     public function aboutus(){
@@ -42,7 +46,17 @@ class HomeController extends Controller{
         return view('Applications', compact('route'));
     }
 
-    public function contactussubmit(Request $request){
+    public function NewQuestion(Request $request){
+        $question = new Question();
+
+        $question->name = $request->name;
+        $question->email = $request->email;
+        $question->topic = $request->topic;
+        $question->subject = $request->subject;
+        $question->question= $request->message;
+        $question->favorite = 0;
+
+        $question->save();
 
         return redirect()->back();
     }

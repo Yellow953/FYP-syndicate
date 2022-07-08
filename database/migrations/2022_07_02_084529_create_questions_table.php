@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('email');
             $table->string('question');
+            $table->string('answer')->nullable();
+            $table->string('topic');
+            $table->string('subject');
             $table->integer('favorite');
             $table->timestamps();
         });

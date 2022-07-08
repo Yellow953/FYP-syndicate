@@ -13,7 +13,8 @@
     <div class="contact-us-form" >
         <h1 class="text-center"><u>تواصل معنا</u></h1>
 
-        <form action="/contactussubmit" method="POST">
+        <form action="/admin/questions/new" method="POST">
+            @csrf
             <div class="row form-group">
                 <div class="offset-3 col-3">
                     <label for="name">Name:</label>

@@ -32,6 +32,7 @@ Route::get('/en/admin/insurances', [App\Http\Controllers\AdminController::class,
 Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions']);
 Route::get('/en/admin/slideshow', [App\Http\Controllers\AdminController::class, 'slideshow']);
 Route::get('/en/admin/board', [App\Http\Controllers\AdminController::class, 'board']);
+Route::get('/en/admin/projects', [App\Http\Controllers\AdminController::class, 'projects']);
 
 //user
 Route::get('/admin/user/{id}/delete', [App\Http\Controllers\UserController::class, 'DeleteUser']);
@@ -48,6 +49,9 @@ Route::get('/admin/news/new', [App\Http\Controllers\NewsController::class, 'NewN
 Route::post('/admin/news/save', [App\Http\Controllers\NewsController::class, 'SaveNewNews']);
 
 //questions
+Route::post('/admin/questions/new', [App\Http\Controllers\HomeController::class, 'NewQuestion']);
+Route::get('/admin/questions/{id}/reply', [App\Http\Controllers\QuestionsController::class, 'ReplyQuestion']);
+Route::get('/admin/questions/{id}/send', [App\Http\Controllers\QuestionsController::class, 'SendQuestion']);
 Route::get('/admin/questions/{id}/delete', [App\Http\Controllers\QuestionsController::class, 'DeleteQuestion']);
 Route::get('/admin/questions/{id}/addtofavorite', [App\Http\Controllers\QuestionsController::class, 'AddToFavorite']);
 
@@ -60,3 +64,17 @@ Route::get('/admin/insuranceApplication/{id}/accept', [App\Http\Controllers\Appl
 Route::get('/admin/insuranceApplication/{id}/reject', [App\Http\Controllers\ApplicationsController::class, 'RejectInsurance']);
 Route::get('/admin/memberApplication/{id}/accept', [App\Http\Controllers\ApplicationsController::class, 'AcceptMember']);
 Route::get('/admin/memberApplication/{id}/reject', [App\Http\Controllers\ApplicationsController::class, 'RejectMember']);
+
+//Board
+Route::get('/admin/board/{id}/delete', [App\Http\Controllers\BoardController::class, 'DeleteBoard']);
+Route::get('/admin/board/{id}/edit', [App\Http\Controllers\BoardController::class, 'EditBoard']);
+Route::post('/admin/board/{id}/save', [App\Http\Controllers\BoardController::class, 'SaveBoard']);
+Route::get('/admin/board/new', [App\Http\Controllers\BoardController::class, 'NewBoard']);
+Route::post('/admin/board/save', [App\Http\Controllers\BoardController::class, 'SaveNewBoard']);
+
+//projects
+Route::get('/admin/projects/{id}/delete', [App\Http\Controllers\ProjectController::class, 'DeleteProject']);
+Route::get('/admin/projects/{id}/edit', [App\Http\Controllers\ProjectController::class, 'EditProject']);
+Route::post('/admin/projects/{id}/save', [App\Http\Controllers\ProjectController::class, 'SaveProjct']);
+Route::get('/admin/projects/new', [App\Http\Controllers\ProjectController::class, 'NewProject']);
+Route::post('/admin/projects/save', [App\Http\Controllers\ProjectController::class, 'SaveNewProject']);

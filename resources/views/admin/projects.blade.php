@@ -25,41 +25,39 @@
 
     <div class="card shadow my-4">
         <div class="card-body">
-            <h1><a href="/admin/board/new" class="btn btn-primary">New</a></h1>
+            <h1><a href="/admin/projects/new" class="btn btn-primary">New</a></h1>
             <div class="table-responsive my-2">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>position</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
+                            <th>Description</th>
+                            <th>Created At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @forelse ($board as $b)
+                        @forelse ($projects as $p)
                             <tr>
                                 <td>
-                                    <img src="assets/images/uploads/{{$b->image}}" alt="" class="adminimg">
-                                    {{$b->name}}
+                                    <img src="assets/images/uploads/{{$p->image}}" alt="" class="adminimg">
+                                    {{$p->name}}
                                 </td>
-                                <td>{{$b->position}}</td>
-                                <td>{{$b->start}}</td>
-                                <td>{{$b->end}}</td>
+                                <td>{{$p->description}}</td>
+                                <td>{{$p->created_at}}</td>
                                 <td>
-                                    <a href="/admin/board/{{$q->id}}/edit" class="btn btn-warning m-1">Edit</a>
-                                    <a href="/admin/board/{{$q->id}}/delete" class="btn btn-danger m-1">Delete</a>
+                                    <a href="/admin/projects/{{$p->id}}/edit" class="btn btn-warning m-1">Edit</a>
+                                    <a href="/admin/projects/{{$p->id}}/delete" class="btn btn-danger m-1">Delete</a>
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4">No Board Yet</td>
+                                <td colspan="4">No Projects Yet</td>
                             </tr>
                         @endforelse
                         <tr>
-                            <td colspan="4">{{$board->links()}}</td>
+                            <td colspan="4">{{$projects->links()}}</td>
                         </tr>
                     </tbody>
                 </table>
