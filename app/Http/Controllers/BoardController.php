@@ -25,6 +25,8 @@ class BoardController extends Controller{
 
         $board->name = $request->name;
         $board->position = $request->position;
+        $board->start = $request->start;
+        $board->end = $request->end;
 
         if($request->file('image')){
             $file= $request->file('image');
@@ -47,6 +49,9 @@ class BoardController extends Controller{
 
         $board->name = $request->name;
         $board->position = $request->position;
+        $board->start = $request->start;
+        $board->end = $request->end;
+
         
         if($request->file('image')){
             $file= $request->file('image');
@@ -57,6 +62,6 @@ class BoardController extends Controller{
 
         $board->save();
 
-        return redirect('/en/admin/users');
+        return redirect('/en/admin/board');
     }
 }

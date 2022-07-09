@@ -75,6 +75,12 @@ Route::post('/admin/board/save', [App\Http\Controllers\BoardController::class, '
 //projects
 Route::get('/admin/projects/{id}/delete', [App\Http\Controllers\ProjectController::class, 'DeleteProject']);
 Route::get('/admin/projects/{id}/edit', [App\Http\Controllers\ProjectController::class, 'EditProject']);
-Route::post('/admin/projects/{id}/save', [App\Http\Controllers\ProjectController::class, 'SaveProjct']);
+Route::post('/admin/projects/{id}/save', [App\Http\Controllers\ProjectController::class, 'SaveProject']);
 Route::get('/admin/projects/new', [App\Http\Controllers\ProjectController::class, 'NewProject']);
 Route::post('/admin/projects/save', [App\Http\Controllers\ProjectController::class, 'SaveNewProject']);
+
+//slideshow
+Route::get('/admin/slideshow/{id}/delete', [App\Http\Controllers\SliderController::class, 'DeleteSlideshow']);
+Route::get('/admin/slideshow/new', [App\Http\Controllers\SliderController::class, 'NewSlideshow']);
+Route::post('/admin/slideshow/save', [App\Http\Controllers\SliderController::class, 'SaveNewSlideshow']);
+

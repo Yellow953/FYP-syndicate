@@ -42,7 +42,7 @@ class ProjectController extends Controller{
         return view('admin.NewProject');
     }
 
-    public function SaveNewUser(Request $request){
+    public function SaveNewProject(Request $request){
         $project = new Project();
 
         $project->name = $request->name;

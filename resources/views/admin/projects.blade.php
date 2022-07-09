@@ -41,7 +41,7 @@
                         @forelse ($projects as $p)
                             <tr>
                                 <td>
-                                    <img src="assets/images/uploads/{{$p->image}}" alt="" class="adminimg">
+                                    <img src="{{asset('assets/images/uploads/'.$p->image)}}" alt="" class="rounded" style="width:150px;height:150px;">
                                     {{$p->name}}
                                 </td>
                                 <td>{{$p->description}}</td>

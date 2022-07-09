@@ -42,15 +42,15 @@
                         @forelse ($board as $b)
                             <tr>
                                 <td>
-                                    <img src="assets/images/uploads/{{$b->image}}" alt="" class="adminimg">
+                                    <img src="{{asset('assets/images/uploads/'.$b->image)}}" alt="" class="rounded" style="width:150px;height:150px;">
                                     {{$b->name}}
                                 </td>
                                 <td>{{$b->position}}</td>
                                 <td>{{$b->start}}</td>
                                 <td>{{$b->end}}</td>
                                 <td>
-                                    <a href="/admin/board/{{$q->id}}/edit" class="btn btn-warning m-1">Edit</a>
-                                    <a href="/admin/board/{{$q->id}}/delete" class="btn btn-danger m-1">Delete</a>
+                                    <a href="/admin/board/{{$b->id}}/edit" class="btn btn-warning m-1">Edit</a>
+                                    <a href="/admin/board/{{$b->id}}/delete" class="btn btn-danger m-1">Delete</a>
                                 </td>
                             </tr>
                         @empty
