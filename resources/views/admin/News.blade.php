@@ -7,9 +7,9 @@
         <h1 class="h3 mb-2 text-gray-800">News</h1>
         
         <div>
-            <form method="GET" action="en/admin/news" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <form method="GET" action="{{route('news')}}" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                    <input type="text" class="form-control bg-light border-0 small" name="search" value="{{request()->query('search')}}" placeholder="Search for..."
                         aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
@@ -58,7 +58,7 @@
                             </tr>
                         @endforelse
                         <tr>
-                            <td colspan="4">{{$news->links()}}</td>
+                            <td colspan="4">{{$news->appends(['search' => request()->query('search')])->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

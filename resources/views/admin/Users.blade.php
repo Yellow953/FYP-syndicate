@@ -7,10 +7,10 @@
         <h1 class="h3 mb-2 text-gray-800">Users</h1>
         
         <div>
-            <form action="en/admin/users" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <form action="{{route('users')}}" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                        aria-label="Search" aria-describedby="basic-addon2">
+                        name="search" value="{{request()->query('search')}}">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -86,7 +86,7 @@
                             </tr>
                         @endforelse
                         <tr>
-                           <td colspan="8">{{$users->links()}}</td>
+                           <td colspan="8">{{$users->appends(['search' => request()->query('search')])->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

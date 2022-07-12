@@ -23,12 +23,31 @@ class AdminController extends Controller{
     }
 
     public function users(){
-        $users = User::paginate(10);
+        $search = request()->query('search');
+        
+        if($search){
+            $users = User::where('name', 'LIKE', "%{$search}%")->paginate(10);
+            if ($users->count() == 0) {
+                $users = User::where('email', 'LIKE', "%{$search}%")->paginate(10);
+                if ($users->count() == 0) {
+                    $users = User::where('phone', 'LIKE', "%{$search}%")->paginate(10);
+                }
+            }
+        }else{
+            $users = User::paginate(10);
+        }
+        
         return view('admin/Users', compact('users'));
     }
 
     public function news(){
-        $news = News::paginate(10);
+        $search = request()->query('search');
+        if($search){
+            $news = News::where('name', 'LIKE', "%{$search}%")->paginate(10);
+        }else{
+            $news = News::paginate(10);
+        }
+
         return view('admin/News', compact('news'));
     }
 
@@ -51,7 +70,13 @@ class AdminController extends Controller{
     }
 
     public function userQuestions(){
-        $questions = Question::paginate(10);
+        $search = request()->query('search');
+        if($search){
+            $questions = Question::where('email', 'LIKE', "%{$search}%")->paginate(10);
+        }else{
+            $questions = Question::paginate(10);
+        }
+
         return view('admin/UserQuestions', compact('questions'));
     }
 
@@ -61,11 +86,22 @@ class AdminController extends Controller{
     }
 
     public function board(){
-        $board = Board::paginate(10);
+        $search = request()->query('search');
+        if($search){
+            $board = Board::where('name', 'LIKE', "%{$search}%")->paginate(10);
+        }else{
+            $board = Board::paginate(10);
+        }
         return view('Admin.board', compact('board'));
     }
 
     public function projects(){
+        $search = request()->query('search');
+        if($search){
+            $projects = Project::where('name', 'LIKE', "%{$search}%")->paginate(10);
+        }else{
+            $projects = Project::paginate(10);
+        }
         $projects = Project::paginate(10);
         return view('Admin.projects', compact('projects'));
     }

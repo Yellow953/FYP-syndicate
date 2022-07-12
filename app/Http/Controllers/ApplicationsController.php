@@ -14,6 +14,10 @@ class ApplicationsController extends Controller{
         $this->middleware('admin');
     }
     
+    public function NewInsurance(Request $request){
+
+    }
+
     public function AcceptInsurance($id){
         $insuranceApplication = InsuranceApplication::find($id);
 
@@ -31,6 +35,10 @@ class ApplicationsController extends Controller{
     public function RejectInsurance($id){
         InsuranceApplication::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function NewMember(Request $request){
+        
     }
 
     public function AcceptMember($id){

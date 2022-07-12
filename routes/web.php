@@ -29,15 +29,15 @@ Route::post('/profile/{id}/save', [App\Http\Controllers\ProfileController::class
 
 //Admin Side
 Route::get('/en/admin', [App\Http\Controllers\AdminController::class, 'admin']);
-Route::get('/en/admin/users', [App\Http\Controllers\AdminController::class, 'users']);
-Route::get('/en/admin/news', [App\Http\Controllers\AdminController::class, 'news']);
-Route::get('/en/admin/memberApplications', [App\Http\Controllers\AdminController::class, 'memberApplications']);
-Route::get('/en/admin/insuranceApplications', [App\Http\Controllers\AdminController::class, 'insuranceApplications']);
-Route::get('/en/admin/insurances', [App\Http\Controllers\AdminController::class, 'insurances']);
-Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions']);
-Route::get('/en/admin/slideshow', [App\Http\Controllers\AdminController::class, 'slideshow']);
-Route::get('/en/admin/board', [App\Http\Controllers\AdminController::class, 'board']);
-Route::get('/en/admin/projects', [App\Http\Controllers\AdminController::class, 'projects']);
+Route::get('/en/admin/users', [App\Http\Controllers\AdminController::class, 'users'])->name('users');
+Route::get('/en/admin/news', [App\Http\Controllers\AdminController::class, 'news'])->name('news');
+Route::get('/en/admin/memberApplications', [App\Http\Controllers\AdminController::class, 'memberApplications'])->name('memberApplications');
+Route::get('/en/admin/insuranceApplications', [App\Http\Controllers\AdminController::class, 'insuranceApplications'])->name('insuranceApplications');
+Route::get('/en/admin/insurances', [App\Http\Controllers\AdminController::class, 'insurances'])->name('insurances');
+Route::get('/en/admin/userQuestions', [App\Http\Controllers\AdminController::class, 'userQuestions'])->name('userQuestions');
+Route::get('/en/admin/slideshow', [App\Http\Controllers\AdminController::class, 'slideshow'])->name('slideshow');
+Route::get('/en/admin/board', [App\Http\Controllers\AdminController::class, 'board'])->name('board');
+Route::get('/en/admin/projects', [App\Http\Controllers\AdminController::class, 'projects'])->name('projects');
 
 //user
 Route::get('/admin/user/{id}/delete', [App\Http\Controllers\UserController::class, 'DeleteUser']);
@@ -65,8 +65,10 @@ Route::get('/admin/insurances/{id}/delete', [App\Http\Controllers\InsurancesCont
 Route::get('/admin/insurances/{id}/extend', [App\Http\Controllers\InsurancesController::class, 'ExtendInsurance']);
 
 //applications
+Route::post('/admin/insuranceApplication/new', [App\Http\Controllers\ApplicationsController::class, 'NewInsurance']);
 Route::get('/admin/insuranceApplication/{id}/accept', [App\Http\Controllers\ApplicationsController::class, 'AcceptInsurance']);
 Route::get('/admin/insuranceApplication/{id}/reject', [App\Http\Controllers\ApplicationsController::class, 'RejectInsurance']);
+Route::post('/admin/memberApplication/new', [App\Http\Controllers\ApplicationsController::class, 'NewMember']);
 Route::get('/admin/memberApplication/{id}/accept', [App\Http\Controllers\ApplicationsController::class, 'AcceptMember']);
 Route::get('/admin/memberApplication/{id}/reject', [App\Http\Controllers\ApplicationsController::class, 'RejectMember']);
 
