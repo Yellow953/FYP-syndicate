@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Board;
 use App\Models\News;
+use App\Models\Project;
 use App\Models\Question;
+use App\Models\Slideshow;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller{
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
-
     public function logout(){
         Session::flush();
         Auth::logout();
@@ -23,12 +22,14 @@ class HomeController extends Controller{
         $route = '/home';
         $news = News::latest()->take(3)->get();
         $questions = Question::where('favorite', 1)->paginate(3);
-        return view('index', compact('route', 'news', 'questions'));
+        $slides = Slideshow::paginate(3);
+        return view('index', compact('route', 'news', 'questions', 'slides'));
     }
 
     public function aboutus(){
         $route='/aboutus';
-        return view('AboutUs', compact('route'));
+        $projects = Project::paginate(3);
+        return view('AboutUs', compact('route', 'projects'));
     }
 
     public function contactus(){
@@ -38,7 +39,8 @@ class HomeController extends Controller{
 
     public function members(){
         $route='/members';
-        return view('Members', compact('route'));
+        $board = Board::all();
+        return view('Members', compact('route', 'board'));
     }
 
     public function applications(){

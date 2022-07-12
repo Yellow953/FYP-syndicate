@@ -22,6 +22,11 @@ Route::get('/en/contactus', [App\Http\Controllers\ENController::class, 'contactu
 Route::get('/en/members', [App\Http\Controllers\ENController::class, 'members']);
 Route::get('/en/applications', [App\Http\Controllers\ENController::class, 'applications']);
 
+//Profile Page
+Route::get('/profile/{id}', [App\Http\Controllers\ProfileController::class, 'profile']);
+Route::get('/profile/{id}/edit', [App\Http\Controllers\ProfileController::class, 'profileEdit']);
+Route::post('/profile/{id}/save', [App\Http\Controllers\ProfileController::class, 'profileSave']);
+
 //Admin Side
 Route::get('/en/admin', [App\Http\Controllers\AdminController::class, 'admin']);
 Route::get('/en/admin/users', [App\Http\Controllers\AdminController::class, 'users']);

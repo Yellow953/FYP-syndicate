@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Board;
+use App\Models\News;
+use App\Models\Project;
+use App\Models\Question;
+use App\Models\Slideshow;
 use Illuminate\Http\Request;
 
 class ENController extends Controller{
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
-
     public function index(){
         $route='/en/home';
-        return view('EN.index', compact('route'));
+        $news = News::latest()->take(3)->get();
+        $questions = Question::where('favorite', 1)->paginate(3);
+        $slides = Slideshow::paginate(3);
+        return view('EN.index', compact('route', 'news', 'questions', 'slides'));
     }
 
     public function aboutus(){
         $route='/en/aboutus';
-        return view('EN.AboutUs', compact('route'));
+        $projects = Project::paginate(3);
+        return view('EN.AboutUs', compact('route', 'projects'));
     }
 
     public function contactus(){
@@ -26,7 +31,8 @@ class ENController extends Controller{
 
     public function members(){
         $route='/en/members';
-        return view('EN.Members', compact('route'));
+        $board = Board::all();
+        return view('EN.Members', compact('route', 'board'));
     }
 
     public function applications(){

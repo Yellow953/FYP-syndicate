@@ -1,26 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Start Slider -->
+    <!-- Start Slider --> 
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
-            <li class="text-center">
-                <img src="https://media-exp1.licdn.com/dms/image/C4E1BAQFqTvDBFI20Ug/company-background_10000/0/1560318589119?e=2147483647&v=beta&t=NVS2LblK2qAwfrqmtRahlN2JvsMV8QBrgs29LEnUGEg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> the syndicate</strong></h1>
-                            <p class="m-b-40">The home of all computer scientists</p>
+            @forelse ($slides as $s)
+                <li class="text-center">
+                    <img src="{{asset('assets/images/uploads/'.$s->image)}}" alt="">
+                </li>
+            @empty
+                <li class="text-center">
+                    <img src="https://media-exp1.licdn.com/dms/image/C4E1BAQFqTvDBFI20Ug/company-background_10000/0/1560318589119?e=2147483647&v=beta&t=NVS2LblK2qAwfrqmtRahlN2JvsMV8QBrgs29LEnUGEg" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="m-b-20"><strong>مرحبا بكم في النقابة</strong></h1>
+                                <p class="m-b-40">منزل جميع علماء الكمبيوتر</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGIdi2CbpWgofbmKFGSz9Tkv9Hlw2DQCB4lQ&usqp=CAU" alt="">
-            </li>
-            <li class="text-center">
-                <img src="https://img4.schoolandcollegelistings.com/331/720/2368997013317203.jpg" alt="">
-            </li>
+                </li>
+                <li class="text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGIdi2CbpWgofbmKFGSz9Tkv9Hlw2DQCB4lQ&usqp=CAU" alt="">
+                </li>
+                <li class="text-center">
+                    <img src="https://img4.schoolandcollegelistings.com/331/720/2368997013317203.jpg" alt="">
+                </li>
+            @endforelse
         </ul>
         <div class="slides-navigation">
             <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -61,7 +67,7 @@
 
      <div class="categories-shop">
         <div class="container">
-            <h1 class="text-center m-2 heading"> <u>News:</u></h1>
+            <h1 class="text-center m-2 heading"> <u>أخبار</u></h1>
             <div class="row">
                 @forelse ($news as $n)
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -74,7 +80,7 @@
                         </div>
                     </div>
                 @empty
-                    <h1 class="text-center m-2">No News Yet</h1>
+                    <h1 class="text-center m-2">لم ترد أنباء حتى الآن</h1>
                 @endforelse
             </div>
         </div>
@@ -82,7 +88,7 @@
 
     <div class="box-add-products">
         <div class="container">
-            <h1 class="text-center m-2 heading"> <u>Most frequent questions:</u></h1>
+            <h1 class="text-center m-2 heading"> <u>الأسئلة الأكثر شيوعًا</u></h1>
             <div class="questions">
                 @forelse ($questions as $q)
                     <div class="row">
@@ -97,12 +103,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="question">
-                                <p>No Questions Yet</p>
+                                <p>لا أسئلة حتى الآن</p>
                             </div>
                         </div>
                     </div>
                     @endforelse
-            <a href="#" class="btn btn-primary more">More...</a>
+            <a href="#" class="btn btn-primary more">أكثر</a>
         </div>
     </div>
 

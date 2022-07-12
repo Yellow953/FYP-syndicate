@@ -25,37 +25,31 @@
                     </div>
                 </div>
             </div>
-    </div><br><hr>
+    </div><br><hr> 
 
     <div class="projects bg-white my-4 w-100">
         <div class="container-fluid">
-            <br><h1 class="text-center m-4 heading"> <u>Projets:</u></h1>
+            <br><h1 class="text-center m-4 heading"> <u>المشاريع</u></h1>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{asset('assets/images/categories_img_01.jpg')}}" alt="" />
-                        <a class="btn hvr-hover" href="#">Project 1</a>
+                @forelse ($projects as $p)
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="shop-cat-box">
+                            <img class="img-fluid" src="{{asset('assets/images/uploads/'.$p->image)}}" alt="" />
+                            <a class="btn hvr-hover" href="#">{{$p->name}}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{asset('assets/images/categories_img_02.jpg')}}" alt="" />
-                        <a class="btn hvr-hover" href="#">Project 2</a>
+                @empty
+                    <div class="text-center">
+                        لا توجد مشاريع بعد
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{asset('assets/images/categories_img_03.jpg')}}" alt="" />
-                        <a class="btn hvr-hover" href="#">Project 3</a>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </div><hr><hr>
 
     <div class="rules-and-laws">
         <div class="container">
-            <h1 class="text-center"><u>Rules And Laws:</u></h1>
+            <h1 class="text-center"><u>القواعد والقوانين</u></h1>
             <div class="row my-4">
                 <div class="col-12">
                     <div class="offer-box-products p-5 bg-white text-right">
