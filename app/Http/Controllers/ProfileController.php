@@ -37,7 +37,9 @@ class ProfileController extends Controller{
             $user->profile_image = $filename;
         }
 
-        $user->password = bcrypt($request->password);
+        if($request->password){
+            $user->password = bcrypt($request->password);
+        }
 
         $user->save();
 
