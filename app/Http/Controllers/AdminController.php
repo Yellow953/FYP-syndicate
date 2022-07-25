@@ -19,7 +19,11 @@ class AdminController extends Controller{
     }
     
     public function admin(){
-        return view('admin/index');
+        $total_users = User::all()->count();
+        $total_insurances = Insurance::all()->count();
+        $total_news = News::all()->count();
+        $total_questions = Question::all()->count();
+        return view('admin/index', compact('total_users', 'total_insurances', 'total_news', 'total_questions'));
     }
 
     public function users(){
@@ -44,6 +48,9 @@ class AdminController extends Controller{
         $search = request()->query('search');
         if($search){
             $news = News::where('name', 'LIKE', "%{$search}%")->paginate(10);
+            if ($news->count() == 0) {
+                $news = News::where('text', 'LIKE', "%{$search}%")->paginate(10);
+            }
         }else{
             $news = News::paginate(10);
         }
@@ -87,6 +94,7 @@ class AdminController extends Controller{
 
     public function board(){
         $search = request()->query('search');
+
         if($search){
             $board = Board::where('name', 'LIKE', "%{$search}%")->paginate(10);
         }else{

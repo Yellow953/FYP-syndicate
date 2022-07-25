@@ -222,6 +222,7 @@
                 <button type="submit" class="btn btn-primary px-4">Submit</button>
             </div>
            </div>
+        </form>
            
            <br><hr><br>
            
